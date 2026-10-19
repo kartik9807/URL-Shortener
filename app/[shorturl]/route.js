@@ -11,5 +11,5 @@ export async function GET(_request,{params}){
     if(url){
         return NextResponse.redirect(url.url);
     }
-    return NextResponse.redirect(new URL('/',process.env.NEXT_PUBLIC_HOST));
+    return NextResponse.redirect(new URL('/',process.env.HOST));
 }
