@@ -8,8 +8,8 @@ export async function GET(_request,{params}){
     const collection = db.collection("urls")
 
     const url = await collection.findOne({shorturl});
-    if(url){
+    if(url?.url){
         return NextResponse.redirect(url.url);
     }
-    return NextResponse.redirect(new URL('/',process.env.HOST));
+    return NextResponse.redirect(new URL('/',_request.url));
 }
