@@ -29,7 +29,7 @@ const Shorten = () => {
             setShorturl("");
             console.log(result)
             if(result.success){
-                setGenerated(`${process.env.HOST}/${shorturl}`)
+                setGenerated(`${window.location.origin}/${shorturl}`)
             }
             alert(result.message)})
         .catch((error) => console.error(error));
